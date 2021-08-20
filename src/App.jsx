@@ -5,14 +5,17 @@ import 'regenerator-runtime/runtime'
 import Header from './components/Header/Header'
 import AsideMenu from './components/AsideMenu/AsideMenu.jsx'
 import { HashRouter as Router } from "react-router-dom";
+import Content from './components/Content/Content.jsx';
 const App = () => (
 
   <StoreProvider>
 
     <Header />
     <Router>
-      <AsideMenu />
-
+      <div className="content-wrapper">
+        <AsideMenu />
+        <Content />
+      </div>
     </Router>
 
 
