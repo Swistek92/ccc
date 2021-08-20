@@ -29,6 +29,8 @@ const Courses = () => {
     <section className={style()}>
       <h2 className={style("title")}></h2>
       <ul className={style("list")}>{coursesElements}</ul>
+      {/* <button onClick={}> Zakup ten kurs </button> */}
+
     </section>
   );
 };
