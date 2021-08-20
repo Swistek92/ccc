@@ -5,6 +5,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { default as ContentStyles } from "./Content.module.scss";
 import { StoreContext } from "../../store/StoreProvider";
 import Courses from "../Courses/Courses";
+import UserCourses from "../UserCourses/UserCourses";
 // import UserCourses from "../UserCourses/UserCourses";
 // import AdminPanel from "../AdminPanel/AdminPanel";
 
@@ -22,7 +23,8 @@ const Content = () => {
     <main className={style()}>
       <Switch>
         <Route exact path="/" render={() => <Courses />} />
-        {isUserLogged && <Route exact path="/my-courses" render={() => <p>moje kursy</p>} />}
+        {isUserLogged && <Route exact path="/my-courses"
+          render={() => <UserCourses />} />}
         {isAdmin && <Route exact path="/my-courses" render={() => <p>zarzadzanie kursami</p>} />}
         <Redirect to="/" />
 
