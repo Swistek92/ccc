@@ -39,7 +39,7 @@ const Course = ({ authors, id, isUserContext, img, price, title }) => {
     <li>
       <article className={style()}>
         <h3 className={style('title')}> {title}</h3>
-        <img alt={title} className={style('image')} src={"https://www.rcsdk8.org/sites/main/files/main-images/camera_lense_0.jpeg"} />
+        <img alt={title} className={style('image')} src={img} />
         <p className={style('price')}>{`koszt kursu: ${price} zł`}</p>
         <p className={style('authors')}>{`autorzy krusu: ${allAuthors}`}</p>
         {shouldBeBuyButtonVisible && <button onClick={handleOnClick}> Zakup ten kurs</button>}

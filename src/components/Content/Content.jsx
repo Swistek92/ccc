@@ -7,7 +7,7 @@ import { StoreContext } from "../../store/StoreProvider";
 import Courses from "../Courses/Courses";
 import UserCourses from "../UserCourses/UserCourses";
 // import UserCourses from "../UserCourses/UserCourses";
-// import AdminPanel from "../AdminPanel/AdminPanel";
+import AdminPanel from "../AdminPanel/AdminPanel";
 
 const style = bemCssModules(ContentStyles);
 
@@ -17,7 +17,7 @@ const Content = () => {
   const { user } = useContext(StoreContext);
 
   const isUserLogged = Boolean(user);
-  const isAdmin = user?.accesLevel === ADMIN_TYPE;
+  const isAdmin = user?.accessLevel === ADMIN_TYPE;
 
   return (
     <main className={style()}>
@@ -25,7 +25,7 @@ const Content = () => {
         <Route exact path="/" render={() => <Courses />} />
         {isUserLogged && <Route exact path="/my-courses"
           render={() => <UserCourses />} />}
-        {isAdmin && <Route exact path="/my-courses" render={() => <p>zarzadzanie kursami</p>} />}
+        {isAdmin && <Route exact path="/manage-courses" render={() => <AdminPanel />} />}
         <Redirect to="/" />
 
       </Switch>
