@@ -8,7 +8,7 @@ import Course from "../Course/Course";
 
 const style = bemCssModules(UserCoursesStyle);
 
-const UserCourses = () => {
+const UserStyles = () => {
   const { user, courses } = useContext(StoreContext);
 
   const buyedCourses = courses
@@ -24,4 +24,4 @@ const UserCourses = () => {
   );
 };
 
-export default UserCourses;
+export default UserStyles;
